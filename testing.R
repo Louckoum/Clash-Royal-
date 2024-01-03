@@ -9,7 +9,7 @@ playerlist<-c("9JJPJYJ9R","CGQYJCJP","YVVRCU8UJ","8GY2VPP9","8VCLLLR0G")
 
 playerlist<-c("9JJPJYJ9R","CGQYJCJP","YVVRCU8UJ","8GY2VPP9","8VCLLLR0G")
 v<-GET("https://api.clashroyale.com/v1/players/%239JJPJYJ9R/battlelog",
-       add_headers(Authorization="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImE1Yzg3NjMwLWMxNDUtNDFkOS04ZTQ1LTViZmFiMjU4ZDI4OSIsImlhdCI6MTY0Njc0NTIzNCwic3ViIjoiZGV2ZWxvcGVyL2JiMGYzODk3LWUzYjMtNTBlNy04ZmFiLWFmZWE5NTQ0OGI3ZSIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyI4NS4yLjI0MS4yMzAiXSwidHlwZSI6ImNsaWVudCJ9XX0.5Ula5bsTRofuVSjiuJR9jLIboSQGDA-uuzJiIuIByssMTK9OdrmWCfdGtw4C_SIXIk1Gv2Q0osydHHjEs97StQ "))
+       add_headers(Authorization="key"))
 
 rawToChar(v$content)
 v1<-fromJSON(rawToChar(v$content))
@@ -20,7 +20,7 @@ player<-paste0("%23",playerlist[2])
 ur<-modify_url("https://api.clashroyale.com/v1/players/",path = c("v1","players",player,"/battlelog"))
 modify_url("https://api.clashroyale.com/v1/players/",path = c("v1","players",player,"battlelog"))
 
-v<-GET(ur,add_headers(Authorization="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImE1Yzg3NjMwLWMxNDUtNDFkOS04ZTQ1LTViZmFiMjU4ZDI4OSIsImlhdCI6MTY0Njc0NTIzNCwic3ViIjoiZGV2ZWxvcGVyL2JiMGYzODk3LWUzYjMtNTBlNy04ZmFiLWFmZWE5NTQ0OGI3ZSIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyI4NS4yLjI0MS4yMzAiXSwidHlwZSI6ImNsaWVudCJ9XX0.5Ula5bsTRofuVSjiuJR9jLIboSQGDA-uuzJiIuIByssMTK9OdrmWCfdGtw4C_SIXIk1Gv2Q0osydHHjEs97StQ "))
+v<-GET(ur,add_headers(Authorization="key "))
 rawToChar(v$content)
 v
 v1<-fromJSON(rawToChar(v$content))
